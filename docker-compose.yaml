@@ -1,0 +1,15 @@
+name: mysql-IM
+services:
+  mysql:
+    image: mysql:latest
+    container_name: mysql-IM
+    environment:
+      MYSQL_ROOT_PASSWORD: IMPass
+      MYSQL_DATABASE: inventorymanagement
+    ports:
+      - '3306:3306'
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+volumes:
+  mysql-data:
