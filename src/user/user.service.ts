@@ -44,11 +44,12 @@ export class UserService {
     newUser.username = username;
     newUser.password = password;
     newUser.isActive = true;
+    newUser.role = 'user';
 
-    const role: Role | null = await this.roleService.getRandomRole();
-    if (role) {
-      newUser.role.push(role);
-    }
+    // const role: Role | null = await this.roleService.getRandomRole();
+    // if (role) {
+    //   newUser.role.push(role);
+    // }
 
     const userToSave = await this.userRepository.create(newUser);
     return await this.userRepository.save(userToSave);

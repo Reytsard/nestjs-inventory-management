@@ -21,6 +21,7 @@ export class User {
   @Column()
   isActive: boolean;
 
-  @OneToMany(() => Role, (role) => role.role)
-  role: Role[];
+  // @OneToMany(() => Role, (role) => role.role)
+  @Column()
+  role: string;
 }
